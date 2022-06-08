@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connect = async () => {
   try {
     await mongoose.connect(
-      "mongodb://admin:fullstack@localhost:27017/teams?authSource=admin"
+      "mongodb://admin:fullstack@localhost:27017/f1?authSource=admin"
     );
     console.log("Mongoose connected");
   } catch (e) {
