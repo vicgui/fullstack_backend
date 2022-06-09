@@ -43,14 +43,14 @@ db.drivers.insert([
 
 db.teams.insert([
   {
-    _id: "ferrari",
+   
     name: "Ferrari",
     foundation: 1929,
     races: 1032,
     current_drivers: ["carlos_sainz", "charles_leclerc"],
   },
   {
-    _id: "mercedes",
+   
     name: "Mercedes",
     foundation: 1954,
     races: 248,

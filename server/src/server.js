@@ -18,7 +18,10 @@ app.use(express.json());
 // })
 
 const teamRouter = require("./resources/team/team.router.js");
+const driverRouter = require("./resources/driver/driver.router.js");
+
 app.use("/teams", teamRouter);
+app.use("/drivers", driverRouter);
 
 const startServer = async () => {
   await db.connect();

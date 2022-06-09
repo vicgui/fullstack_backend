@@ -24,4 +24,30 @@ const findOne = async (req, res) => {
   }
 };
 
-module.exports = { findMany, findOne };
+const updateOne = async(req, res) => {
+  const {id} = req.params;
+  try{
+    const doc = await Team.findOneAndUpdate({_id:id},req.body,{new:true})
+    if(!doc){
+      return res.status(404).json({error:'Not found'});
+    }
+    res.status(200).json({result:[doc]})
+  }catch(e){
+    res.status(500).json({error: "cannot update"})
+  }
+}
+
+const getDrivers = async(req,res)=>{
+  const {id} = req.params;
+  try{
+    const doc = await Team.findOne({_id:id});
+    if(!doc){
+      return res.status(404).json({error:'Not found'});
+    }
+    res.status(200).json({result:[doc.current_drivers]})
+  }catch(e){
+    res.status(500).json({error: "cannot find drivers"})
+  }
+}
+
+module.exports = { findMany, findOne, updateOne, getDrivers };
