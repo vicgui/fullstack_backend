@@ -17,6 +17,10 @@ const teamSchema = new Schema({
   current_drivers: {
     type: [String],
   },
+  created_at: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const Team = mongoose.model("team", teamSchema);
