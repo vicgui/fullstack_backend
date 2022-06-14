@@ -5,12 +5,13 @@ const teamControllers = require("./team.controllers");
 
 const router = Router();
 
-router.route("/").get(teamControllers.findMany);
+router.route("/").get(teamControllers.findMany).post(teamControllers.createOne);
 
 router
   .route("/:id")
   .get(teamControllers.findOne)
-  .put(teamControllers.updateOne);
+  .put(teamControllers.updateOne)
+  .delete(teamControllers.deleteOne);
 
 router.route("/drivers/:id").get(teamControllers.getDrivers);
 
